@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
     NSLog(@"羊你改成你的名字");
-     NSLog(@"zhang1989sh");
+     NSLog(@"zhang1989sh !!!");
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
