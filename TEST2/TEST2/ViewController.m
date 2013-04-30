@@ -20,6 +20,7 @@
     NSLog(@"羊你改成你的名字");
      NSLog(@"zhang1989sh !!!");
     NSLog(@"这次谁该 !!!");
+    NSLog(@"家里air改一下 !!!");
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
