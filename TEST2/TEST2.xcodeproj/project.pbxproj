@@ -24,6 +24,8 @@
 		97216A86172D08830002F022 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97216A5E172D08830002F022 /* Foundation.framework */; };
 		97216A8E172D08830002F022 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 97216A8C172D08830002F022 /* InfoPlist.strings */; };
 		97216A91172D08830002F022 /* TEST2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97216A90172D08830002F022 /* TEST2Tests.m */; };
+		97305DF0173353AF00E8C97A /* mars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97305DEF173353AF00E8C97A /* mars.jpg */; };
+		976044A41733608A0013E532 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = 976044A31733608A0013E532 /* 123.png */; };
 		97DD13B01732648E0030CC46 /* README-GHUnit in Resources */ = {isa = PBXBuildFile; fileRef = 97DD13AC1732648E0030CC46 /* README-GHUnit */; };
 		97DD13B11732648E0030CC46 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DD13AF1732648E0030CC46 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		97DD1405173264FD0030CC46 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DD13B4173264FD0030CC46 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -89,6 +91,8 @@
 		97216A8D172D08830002F022 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		97216A8F172D08830002F022 /* TEST2Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEST2Tests.h; sourceTree = "<group>"; };
 		97216A90172D08830002F022 /* TEST2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEST2Tests.m; sourceTree = "<group>"; };
+		97305DEF173353AF00E8C97A /* mars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mars.jpg; sourceTree = "<group>"; };
+		976044A31733608A0013E532 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		97DD13AC1732648E0030CC46 /* README-GHUnit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "README-GHUnit"; sourceTree = "<group>"; };
 		97DD13AE1732648E0030CC46 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		97DD13AF1732648E0030CC46 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 				97216A77172D08830002F022 /* MainStoryboard_iPad.storyboard */,
 				97216A7A172D08830002F022 /* ViewController.h */,
 				97216A7B172D08830002F022 /* ViewController.m */,
+				976044A31733608A0013E532 /* 123.png */,
+				97305DEF173353AF00E8C97A /* mars.jpg */,
 				97216A63172D08830002F022 /* Supporting Files */,
 			);
 			path = TEST2;
@@ -445,6 +451,8 @@
 				97216A76172D08830002F022 /* MainStoryboard_iPhone.storyboard in Resources */,
 				97216A79172D08830002F022 /* MainStoryboard_iPad.storyboard in Resources */,
 				97DD13B01732648E0030CC46 /* README-GHUnit in Resources */,
+				97305DF0173353AF00E8C97A /* mars.jpg in Resources */,
+				976044A41733608A0013E532 /* 123.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
