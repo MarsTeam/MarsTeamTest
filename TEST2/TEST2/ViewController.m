@@ -13,11 +13,16 @@
 
 @interface ViewController ()
 {
-    int j;
+    int     j;
+    int     countFun;
     NSTimer *times;
     NSArray *column1;
     NSArray *column2;
     NSArray *column3;
+    
+    UIImageView *snakeImageView;
+    
+    CGPoint beginPoint;
 }
 @end
 
@@ -33,17 +38,17 @@
     
     UIImage *image = [UIImage imageNamed:@"mars.jpg"];
     [self imageUpload:image];
-    
-    
+
+
     j = 0;
-    CGRect pickerFrame = CGRectMake(0, 0, 260, 80);
+    CGRect pickerFrame = CGRectMake(0, 0, 120, 80);
     self.picker.frame = pickerFrame;
     
-    UIImage *happy=[UIImage imageNamed:@"happy.png"];
-    UIImage *gold=[UIImage imageNamed:@"redhat_games.png"];
-    UIImage *santa=[UIImage imageNamed:@"sleeping_santaclaus.png"];
-    UIImage *tsitter=[UIImage imageNamed:@"tsitter_square_sleeping.png"];
-    UIImage *monkey=[UIImage imageNamed:@"face_monkey.png"];
+    UIImage *happy=[UIImage imageNamed:@"China@2x.png"];
+    UIImage *gold=[UIImage imageNamed:@"England@2x.png"];
+    UIImage *santa=[UIImage imageNamed:@"France@2x.png"];
+    UIImage *tsitter=[UIImage imageNamed:@"Germany@2x.png"];
+    UIImage *monkey=[UIImage imageNamed:@"Italy@2x.png"];
     
 
     
@@ -65,6 +70,52 @@
         [self setValue:imgViewArray forKey:columnname];
     }
     srandom(time(NULL));
+    
+    
+    
+    snakeImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"China@2x.png"]];
+    snakeImageView.frame = CGRectMake(0, 0, 80, 150);
+    snakeImageView.center = CGPointMake(280, 50);
+    [self.view addSubview:snakeImageView];
+    
+}
+
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+
+    UITouch *touch = [touches anyObject];
+    
+    beginPoint = [touch locationInView:snakeImageView];
+    
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+
+    if (self.goButoon.enabled == YES) {
+        UITouch *touch = [touches anyObject];
+        
+        CGPoint nowPoint = [touch locationInView:snakeImageView];
+        
+        //float offsetX = nowPoint.x - beginPoint.x;
+        float offsetY = nowPoint.y - beginPoint.y;
+        
+        if(snakeImageView.center.y + offsetY <150)
+        {
+            snakeImageView.center = CGPointMake(280, snakeImageView.center.y + offsetY);
+        }
+    }
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"hahahah");
+    snakeImageView.center = CGPointMake(280, 50);
+    if (self.goButoon.enabled == YES) {
+        [self spin];
+    }
 }
 
 
@@ -140,18 +191,21 @@
 
 -(IBAction)spin
 {
-    
-    times=[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(function) userInfo:nil repeats:YES];
-    
-    
-    
+        countFun = 100000;
+        times=[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(function) userInfo:nil repeats:YES];
+}
+
+
+-(IBAction)stop
+{
+    countFun = 50;
 }
 
 
 -(void)function
 {
     j++;
-    if(j%100==0)
+    if(j%countFun==0)
     {
         [times invalidate];
         times=nil;
@@ -249,7 +303,7 @@
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
     //return 128;
-    return 50;
+    return 60;
 }
 
 - (void)didReceiveMemoryWarning

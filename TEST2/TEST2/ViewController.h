@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *picker;
 @property (weak, nonatomic) IBOutlet UIButton *goButoon;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
 
 @end
