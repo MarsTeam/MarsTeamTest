@@ -9,7 +9,8 @@
 #import "ViewController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
-
+#import "ViewController2.h"
+#import "ViewController3.h"
 
 @interface ViewController ()
 {
@@ -28,18 +29,59 @@
 
 @implementation ViewController
 
+
+- (void)loadView
+{
+
+    [super loadView];
+
+    
+    
+//    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    [btn2 setTitle:@"发送Photo消息给微信" forState:UIControlStateNormal];
+//    btn2.titleLabel.font = [UIFont systemFontOfSize:14];
+//    [btn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [btn2 setFrame:CGRectMake(165, 25, 145, 40)];
+//    [btn2 addTarget:self action:@selector(sendImageContent) forControlEvents:UIControlEventTouchUpInside];
+//    [footView addSubview:btn2];
+    
+    
+}
+
+//- (void)viewDidLoad
+//{
+//    [super viewDidLoad];
+//}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button.frame = CGRectMake(100, 250, 100, 50);
+    [button setTitle:@"NEXT VIEW" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(goView) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    
+    
     NSLog(@"羊你改成你的名字");
-    NSString *contents = @"您有一条未读的新消息";
+    NSString *contents = @"您有一条TEST2未读的新消息";
     [self localNotification:contents];
     
     UIImage *image = [UIImage imageNamed:@"mars.jpg"];
     [self imageUpload:image];
 
-
+    
+    int (^maxBlock)(int, int) = ^(int x, int y)
+    {
+        return x+y;
+    };
+    
+    int aa = maxBlock(10,50);
+    
+    NSLog(@"%d",aa);
+    
     j = 0;
     CGRect pickerFrame = CGRectMake(0, 0, 120, 80);
     self.picker.frame = pickerFrame;
@@ -192,7 +234,7 @@
 -(IBAction)spin
 {
         countFun = 100000;
-        times=[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(function) userInfo:nil repeats:YES];
+        times=[NSTimer scheduledTimerWithTimeInterval:0.07 target:self selector:@selector(function) userInfo:nil repeats:YES];
 }
 
 
@@ -221,11 +263,11 @@
         NSLog(@"%d",firstvalue%5);
         if (firstvalue%5==secondvalue%5&&firstvalue%5==thirdvalue%5) 
         {
-            NSLog(@"3个一样");
+            [self alertMess:@"3个一样，恭喜！！"];
         }
         else if(firstvalue%5==secondvalue%5||firstvalue%5==thirdvalue%5||secondvalue%5==thirdvalue%5)
         {
-            NSLog(@"2个一样");
+            [self alertMess:@"2个一样，继续加油"];
         }
         /*
          for (int i=0; i<3; i++) {
@@ -267,6 +309,17 @@
 
 
 
+-(void)alertMess:(NSString *)mess
+{
+    NSLog(@"3个一样");
+    UIAlertView*alert = [[UIAlertView alloc]initWithTitle:@"提示"
+                                                  message:mess
+                                                 delegate:nil
+                                        cancelButtonTitle:@"确定"
+                                        otherButtonTitles:nil];
+    [alert show];
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -302,9 +355,20 @@
 }
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
-    //return 128;
-    return 60;
+    return 128;
+    //return 60;
 }
+- (void)goView
+{
+
+    ViewController3* viewController = [[ViewController3 alloc] init];
+    
+    
+    UINavigationController *navigatitonController = [[UINavigationController alloc]initWithRootViewController:viewController];
+//	[self presentModalViewController:navigatitonController animated:YES];
+    [self presentViewController:navigatitonController animated:YES completion:^{}];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

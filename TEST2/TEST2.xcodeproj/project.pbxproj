@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890E3BE11764B063009E76E6 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 890E3BDF1764B063009E76E6 /* ViewController3.m */; };
+		890E3BE21764B063009E76E6 /* ViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890E3BE01764B063009E76E6 /* ViewController3.xib */; };
+		8935CA6E1761D53100A07174 /* MarsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8935CA6D1761D53100A07174 /* MarsCell.m */; };
+		89500D22175F6BAC0087C6D0 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 89500D20175F6BAC0087C6D0 /* ViewController2.m */; };
+		89500D23175F6BAC0087C6D0 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89500D21175F6BAC0087C6D0 /* ViewController2.xib */; };
 		8954145F17588E4000CF0D3B /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8954145A17588E4000CF0D3B /* happy.png */; };
 		8954146017588E4000CF0D3B /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8954145A17588E4000CF0D3B /* happy.png */; };
 		8954146117588E4000CF0D3B /* redhat_games.png in Resources */ = {isa = PBXBuildFile; fileRef = 8954145B17588E4000CF0D3B /* redhat_games.png */; };
@@ -23,6 +28,13 @@
 		89541472175B191B00CF0D3B /* Japan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89541471175B191B00CF0D3B /* Japan@2x.png */; };
 		89541474175B192900CF0D3B /* France@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89541473175B192800CF0D3B /* France@2x.png */; };
 		89541476175B193900CF0D3B /* Germany@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89541475175B193900CF0D3B /* Germany@2x.png */; };
+		8960F7F6176205FB001CC8DC /* MarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8960F7F5176205FB001CC8DC /* MarsCell.xib */; };
+		896909101762090300257246 /* DuduCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8969090F1762090300257246 /* DuduCell.xib */; };
+		896909131762091B00257246 /* DuduCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 896909121762091B00257246 /* DuduCell.m */; };
+		8969091517620F1100257246 /* left_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8969091417620F1100257246 /* left_white@2x.png */; };
+		89690917176222DE00257246 /* photo_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89690916176222DE00257246 /* photo_down@2x.png */; };
+		89AAEDCD1760D5F800EA2EB9 /* photo_bac@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AAEDCC1760D5F800EA2EB9 /* photo_bac@2x.png */; };
+		89AAEDCE1760D5F800EA2EB9 /* photo_bac@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AAEDCC1760D5F800EA2EB9 /* photo_bac@2x.png */; };
 		97216A5D172D08830002F022 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97216A5C172D08830002F022 /* UIKit.framework */; };
 		97216A5F172D08830002F022 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97216A5E172D08830002F022 /* Foundation.framework */; };
 		97216A61172D08830002F022 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97216A60172D08830002F022 /* CoreGraphics.framework */; };
@@ -84,6 +96,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		890E3BDE1764B063009E76E6 /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		890E3BDF1764B063009E76E6 /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		890E3BE01764B063009E76E6 /* ViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController3.xib; sourceTree = "<group>"; };
+		8935CA6C1761D53100A07174 /* MarsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarsCell.h; sourceTree = "<group>"; };
+		8935CA6D1761D53100A07174 /* MarsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarsCell.m; sourceTree = "<group>"; };
+		89500D1F175F6BAC0087C6D0 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		89500D20175F6BAC0087C6D0 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		89500D21175F6BAC0087C6D0 /* ViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController2.xib; sourceTree = "<group>"; };
 		8954145A17588E4000CF0D3B /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy.png; sourceTree = "<group>"; };
 		8954145B17588E4000CF0D3B /* redhat_games.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redhat_games.png; sourceTree = "<group>"; };
 		8954145C17588E4000CF0D3B /* sleeping_santaclaus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleeping_santaclaus.png; sourceTree = "<group>"; };
@@ -95,6 +115,13 @@
 		89541471175B191B00CF0D3B /* Japan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Japan@2x.png"; sourceTree = "<group>"; };
 		89541473175B192800CF0D3B /* France@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "France@2x.png"; sourceTree = "<group>"; };
 		89541475175B193900CF0D3B /* Germany@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Germany@2x.png"; sourceTree = "<group>"; };
+		8960F7F5176205FB001CC8DC /* MarsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarsCell.xib; sourceTree = "<group>"; };
+		8969090F1762090300257246 /* DuduCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DuduCell.xib; sourceTree = "<group>"; };
+		896909111762091B00257246 /* DuduCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DuduCell.h; sourceTree = "<group>"; };
+		896909121762091B00257246 /* DuduCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuduCell.m; sourceTree = "<group>"; };
+		8969091417620F1100257246 /* left_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_white@2x.png"; sourceTree = "<group>"; };
+		89690916176222DE00257246 /* photo_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_down@2x.png"; sourceTree = "<group>"; };
+		89AAEDCC1760D5F800EA2EB9 /* photo_bac@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_bac@2x.png"; sourceTree = "<group>"; };
 		97216A59172D08830002F022 /* TEST2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEST2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97216A5C172D08830002F022 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		97216A5E172D08830002F022 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -272,8 +299,23 @@
 				97216A77172D08830002F022 /* MainStoryboard_iPad.storyboard */,
 				97216A7A172D08830002F022 /* ViewController.h */,
 				97216A7B172D08830002F022 /* ViewController.m */,
+				89500D1F175F6BAC0087C6D0 /* ViewController2.h */,
+				89500D20175F6BAC0087C6D0 /* ViewController2.m */,
+				89500D21175F6BAC0087C6D0 /* ViewController2.xib */,
+				890E3BDE1764B063009E76E6 /* ViewController3.h */,
+				890E3BDF1764B063009E76E6 /* ViewController3.m */,
+				890E3BE01764B063009E76E6 /* ViewController3.xib */,
+				8960F7F5176205FB001CC8DC /* MarsCell.xib */,
+				8935CA6C1761D53100A07174 /* MarsCell.h */,
+				8935CA6D1761D53100A07174 /* MarsCell.m */,
+				896909111762091B00257246 /* DuduCell.h */,
+				896909121762091B00257246 /* DuduCell.m */,
+				8969090F1762090300257246 /* DuduCell.xib */,
+				89690916176222DE00257246 /* photo_down@2x.png */,
+				8969091417620F1100257246 /* left_white@2x.png */,
 				976044A31733608A0013E532 /* 123.png */,
 				97305DEF173353AF00E8C97A /* mars.jpg */,
+				89AAEDCC1760D5F800EA2EB9 /* photo_bac@2x.png */,
 				97216A63172D08830002F022 /* Supporting Files */,
 			);
 			path = TEST2;
@@ -510,6 +552,13 @@
 				89541472175B191B00CF0D3B /* Japan@2x.png in Resources */,
 				89541474175B192900CF0D3B /* France@2x.png in Resources */,
 				89541476175B193900CF0D3B /* Germany@2x.png in Resources */,
+				89500D23175F6BAC0087C6D0 /* ViewController2.xib in Resources */,
+				89AAEDCD1760D5F800EA2EB9 /* photo_bac@2x.png in Resources */,
+				8960F7F6176205FB001CC8DC /* MarsCell.xib in Resources */,
+				896909101762090300257246 /* DuduCell.xib in Resources */,
+				8969091517620F1100257246 /* left_white@2x.png in Resources */,
+				89690917176222DE00257246 /* photo_down@2x.png in Resources */,
+				890E3BE21764B063009E76E6 /* ViewController3.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +572,7 @@
 				8954146417588E4000CF0D3B /* sleeping_santaclaus.png in Resources */,
 				89541467175896B700CF0D3B /* face_monkey.png in Resources */,
 				8954146A17589C8100CF0D3B /* tsitter_square_sleeping.png in Resources */,
+				89AAEDCE1760D5F800EA2EB9 /* photo_bac@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +625,10 @@
 				97DD1418173264FD0030CC46 /* ASIS3ObjectRequest.m in Sources */,
 				97DD1419173264FD0030CC46 /* ASIS3Request.m in Sources */,
 				97DD141A173264FD0030CC46 /* ASIS3ServiceRequest.m in Sources */,
+				89500D22175F6BAC0087C6D0 /* ViewController2.m in Sources */,
+				8935CA6E1761D53100A07174 /* MarsCell.m in Sources */,
+				896909131762091B00257246 /* DuduCell.m in Sources */,
+				890E3BE11764B063009E76E6 /* ViewController3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
