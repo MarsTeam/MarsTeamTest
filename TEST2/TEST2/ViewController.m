@@ -153,7 +153,7 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"hahahah");
+    //NSLog(@"hahahah");
     snakeImageView.center = CGPointMake(280, 50);
     if (self.goButoon.enabled == YES) {
         [self spin];

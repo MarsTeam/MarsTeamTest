@@ -7,12 +7,30 @@
 //
 
 #import "ViewController3.h"
+#import "tableSectionBar.h"
 
 @interface ViewController3 ()
 {
     UIScrollView *scrollview;
     UIView *viewTop;
     UIView *viewBlack;
+    tableSectionBar *tableBar;
+    
+    
+    NSArray *firstArray;
+    NSArray *secondArray;
+    NSArray *thirdArray;
+    
+    UITableView *tableViewFirst;
+    UITableView *tableViewSecond;
+    UITableView *tableViewThird;
+    
+    UIButton *leftButton;
+    UIButton *centerButton;
+    UIButton *rightButton;
+    
+    
+    UIView *marsView;
 }
 
 @end
@@ -31,25 +49,61 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    firstArray = [NSArray arrayWithObjects:@"a",@"b", @"c",@"d",@"e",@"f",@"g", @"h",@"i",@"j",@"h",@"i",@"j",@"h",@"i",@"j",nil];
+    secondArray = [NSArray arrayWithObjects:@"1",@"2", @"3",@"4",@"5",@"6",@"7",@"8",@"9", @"10",@"11",@"12",nil];
+    thirdArray = [NSArray arrayWithObjects:@"a1",@"b2", @"c3",@"d4",@"e5", @"f3",nil];
     
     
     
     scrollview =[[UIScrollView alloc]initWithFrame:CGRectMake(0,0,320,500)];
-    scrollview.contentSize=CGSizeMake(320,900);
+    scrollview.contentSize=CGSizeMake(320,1300);
     scrollview.backgroundColor=[UIColor whiteColor];
     //scrollview.pagingEnabled=YES;//是否自己动适应
+    
     
     UIImageView *viewImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
     viewImg.image = [UIImage imageNamed:@"photo_bac@2x.png"];
     [scrollview addSubview:viewImg];
     
     
+    tableBar = [[tableSectionBar alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
+    tableBar.delegate = self;
+    
+    
     viewBlack = [[UIView alloc] initWithFrame:CGRectMake(0, 200, 320, 60)];
-    UIImageView *BlackImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-    BlackImg.image = [UIImage imageNamed:@"left_white@2x.png"];
-    [viewBlack addSubview:BlackImg];
+    [viewBlack addSubview:tableBar];
     [scrollview addSubview:viewBlack];
+    
+    
+    
+
+    
+    
+    
+    tableViewFirst = [[UITableView alloc] initWithFrame:CGRectMake(0, 260, 320, 1000)];
+    tableViewFirst.delegate = self;
+    tableViewFirst.dataSource = self;
+    tableViewFirst.scrollEnabled = NO;
+    tableViewFirst.hidden = NO;
+    [scrollview addSubview:tableViewFirst];
+    
+    
+    tableViewSecond = [[UITableView alloc] initWithFrame:CGRectMake(0, 260, 320, 1000)];
+    tableViewSecond.delegate = self;
+    tableViewSecond.dataSource = self;
+    tableViewSecond.scrollEnabled = NO;
+    tableViewSecond.hidden = YES;
+    [scrollview addSubview:tableViewSecond];
+    
+    
+    tableViewThird = [[UITableView alloc] initWithFrame:CGRectMake(0, 260, 320, 1000)];
+    tableViewThird.delegate = self;
+    tableViewThird.dataSource = self;
+    tableViewThird.scrollEnabled = NO;
+    tableViewThird.hidden = YES;
+    [scrollview addSubview:tableViewThird];
+    
+
     
     
     [self.view addSubview:scrollview];
@@ -66,30 +120,147 @@
     // Do any additional setup after loading the view from its nib.
     
     
-    viewTop = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-    UIImageView *TopImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-    TopImg.image = [UIImage imageNamed:@"left_white@2x.png"];
-    [viewTop addSubview:TopImg];
+    viewTop = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
     viewTop.hidden = YES;
     [self.view addSubview:viewTop];
-    
+
 }
 
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView2
 {
     
    //NSLog(@"y:%f",scrollView.contentOffset.y);
 
-    if (scrollView.contentOffset.y>200) {
+    if (scrollView2.contentOffset.y>200) {
         
+        [viewTop removeFromSuperview];
+        //viewTop = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+        [viewTop addSubview:tableBar];
         viewTop.hidden = NO;
-        NSLog(@"出来了");
+        [self.view addSubview:viewTop];
+
         //self.barUiew2.frame = CGRectMake(0,126,320,52);
     }else{
+        
+        [viewBlack removeFromSuperview];
+        //viewBlack = [[UIView alloc] initWithFrame:CGRectMake(0, 200, 320, 60)];
+        [viewBlack addSubview:tableBar];
         viewTop.hidden = YES;
+        [scrollview addSubview:viewBlack];
     }
 }
+//
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+   
+    if (tableView == tableViewFirst) {
+        return [firstArray count];
+    }else if(tableView == tableViewSecond){
+        return [secondArray count];
+    
+    }else if(tableView == tableViewThird){
+        return [thirdArray count];
+    }else{
+        return 0;
+    }
+    
+    
+}
+
+//-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//  
+//    
+//    if (tableView == tableViewFirst) {
+//        return [firstArray count];
+//    }else if(tableView == tableViewSecond){
+//        return [secondArray count];
+//        
+//    }else if(tableView == tableViewThird){
+//        return [thirdArray count];
+//    }else{
+//        return 0;
+//    }
+//    
+//}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+
+    NSInteger row = [indexPath row];
+    if (tableView == tableViewFirst) {
+        static NSString *FirstTableIdentifier = @"FirstTableIdentifier";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:FirstTableIdentifier];
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:FirstTableIdentifier];
+        }
+        cell.textLabel.text = [firstArray objectAtIndex:row];
+        return cell;
+        
+    }else if(tableView == tableViewSecond){
+        static NSString *SecondTableIdentifier = @"SecondTableIdentifier";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SecondTableIdentifier];
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SecondTableIdentifier];
+        }
+        cell.textLabel.text = [secondArray objectAtIndex:row];
+        return cell;
+        
+    }else if(tableView == tableViewThird){
+        static NSString *ThirdTableIdentifier = @"ThirdTableIdentifier";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ThirdTableIdentifier];
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ThirdTableIdentifier];
+        }
+        cell.textLabel.text = [thirdArray objectAtIndex:row];
+        return cell;
+    }
+    
+}
+
+
+-(void)ButtonInAction:(id)sender
+{
+    UIButton *button = sender;
+    switch (button.tag) {
+        case 0:
+
+            
+            tableViewFirst.hidden = NO;
+            tableViewSecond.hidden = YES;
+            tableViewThird.hidden = YES;
+            break;
+        case 1:
+            
+
+            
+            tableViewFirst.hidden = YES;
+            tableViewSecond.hidden = NO;
+            tableViewThird.hidden = YES;
+            break;
+        case 2:
+            
+            
+            tableViewFirst.hidden = YES;
+            tableViewSecond.hidden = YES;
+            tableViewThird.hidden = NO;
+            break;
+        default:
+            break;
+    }
+    
+}
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController3 : UIViewController<UIScrollViewDelegate>
+
+@interface ViewController3 : UIViewController<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @end
