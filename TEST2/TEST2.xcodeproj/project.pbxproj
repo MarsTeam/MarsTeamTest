@@ -59,6 +59,7 @@
 		896909131762091B00257246 /* DuduCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 896909121762091B00257246 /* DuduCell.m */; };
 		8969091517620F1100257246 /* left_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8969091417620F1100257246 /* left_white@2x.png */; };
 		89690917176222DE00257246 /* photo_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89690916176222DE00257246 /* photo_down@2x.png */; };
+		897B9CC71769BB1A00C21983 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897B9CC61769BB1A00C21983 /* QuartzCore.framework */; };
 		89AAEDCD1760D5F800EA2EB9 /* photo_bac@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AAEDCC1760D5F800EA2EB9 /* photo_bac@2x.png */; };
 		89AAEDCE1760D5F800EA2EB9 /* photo_bac@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AAEDCC1760D5F800EA2EB9 /* photo_bac@2x.png */; };
 		97216A5D172D08830002F022 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97216A5C172D08830002F022 /* UIKit.framework */; };
@@ -161,6 +162,7 @@
 		896909121762091B00257246 /* DuduCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuduCell.m; sourceTree = "<group>"; };
 		8969091417620F1100257246 /* left_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_white@2x.png"; sourceTree = "<group>"; };
 		89690916176222DE00257246 /* photo_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_down@2x.png"; sourceTree = "<group>"; };
+		897B9CC61769BB1A00C21983 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		89AAEDCC1760D5F800EA2EB9 /* photo_bac@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_bac@2x.png"; sourceTree = "<group>"; };
 		97216A59172D08830002F022 /* TEST2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEST2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97216A5C172D08830002F022 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -251,6 +253,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				897B9CC71769BB1A00C21983 /* QuartzCore.framework in Frameworks */,
 				97DD1433173269AA0030CC46 /* libz.dylib in Frameworks */,
 				97DD1431173269980030CC46 /* MobileCoreServices.framework in Frameworks */,
 				97DD142F173269830030CC46 /* SystemConfiguration.framework in Frameworks */,
@@ -326,6 +329,7 @@
 				97216A5E172D08830002F022 /* Foundation.framework */,
 				97216A60172D08830002F022 /* CoreGraphics.framework */,
 				97216A83172D08830002F022 /* SenTestingKit.framework */,
+				897B9CC61769BB1A00C21983 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

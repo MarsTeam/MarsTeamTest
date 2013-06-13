@@ -8,6 +8,8 @@
 
 #import "ViewController3.h"
 #import "tableSectionBar.h"
+#import <QuartzCore/QuartzCore.h>
+
 
 @interface ViewController3 ()
 {
@@ -49,21 +51,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    self.view.layer.cornerRadius = 20.0;
+    self.view.layer.backgroundColor = [UIColor purpleColor].CGColor;
+    
     firstArray = [NSArray arrayWithObjects:@"a",@"b", @"c",@"d",@"e",@"f",@"g", @"h",@"i",@"j",@"h",@"i",@"j",@"h",@"i",@"j",nil];
     secondArray = [NSArray arrayWithObjects:@"1",@"2", @"3",@"4",@"5",@"6",@"7",@"8",@"9", @"10",@"11",@"12",nil];
     thirdArray = [NSArray arrayWithObjects:@"a1",@"b2", @"c3",@"d4",@"e5", @"f3",nil];
+    float aa = self.view.frame.size.height;
+    NSLog(@"aa:%f",aa);
     
-    
-    
-    scrollview =[[UIScrollView alloc]initWithFrame:CGRectMake(0,0,320,500)];
-    scrollview.contentSize=CGSizeMake(320,1300);
+    scrollview =[[UIScrollView alloc]initWithFrame:CGRectMake(0,0,320,418)];
+    scrollview.contentSize=CGSizeMake(320,1000);
     scrollview.backgroundColor=[UIColor whiteColor];
     //scrollview.pagingEnabled=YES;//是否自己动适应
     
     
-    UIImageView *viewImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
-    viewImg.image = [UIImage imageNamed:@"photo_bac@2x.png"];
-    [scrollview addSubview:viewImg];
+//    UIImageView *viewImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
+//    viewImg.image = [UIImage imageNamed:@"photo_bac@2x.png"];
+//    viewImg.layer.borderWidth = 3;
+//    viewImg.layer.borderColor = [[UIColor blackColor] CGColor];
+//    viewImg.layer.cornerRadius = 20;
+//    [scrollview addSubview:viewImg];
+    
+    
+    CALayer *imagerLaye = [CALayer layer];
+    imagerLaye.frame = CGRectMake(0, 0, 320, 200);
+    imagerLaye.backgroundColor = [[UIColor blackColor] CGColor];
+    //imagerLaye.cornerRadius = 20.0;
+    imagerLaye.contents = (id)[UIImage imageNamed:@"photo_bac@2x.png"].CGImage;
+    imagerLaye.masksToBounds = YES;
+    [scrollview.layer addSublayer:imagerLaye];
+    
+    
+    
+   
     
     
     tableBar = [[tableSectionBar alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
@@ -80,7 +103,7 @@
     
     
     
-    tableViewFirst = [[UITableView alloc] initWithFrame:CGRectMake(0, 260, 320, 1000)];
+    tableViewFirst = [[UITableView alloc] initWithFrame:CGRectMake(0, 250, 320, 1000)];
     tableViewFirst.delegate = self;
     tableViewFirst.dataSource = self;
     tableViewFirst.scrollEnabled = NO;
@@ -88,7 +111,7 @@
     [scrollview addSubview:tableViewFirst];
     
     
-    tableViewSecond = [[UITableView alloc] initWithFrame:CGRectMake(0, 260, 320, 1000)];
+    tableViewSecond = [[UITableView alloc] initWithFrame:CGRectMake(0, 250, 320, 1000)];
     tableViewSecond.delegate = self;
     tableViewSecond.dataSource = self;
     tableViewSecond.scrollEnabled = NO;
@@ -96,7 +119,7 @@
     [scrollview addSubview:tableViewSecond];
     
     
-    tableViewThird = [[UITableView alloc] initWithFrame:CGRectMake(0, 260, 320, 1000)];
+    tableViewThird = [[UITableView alloc] initWithFrame:CGRectMake(0, 250, 320, 1000)];
     tableViewThird.delegate = self;
     tableViewThird.dataSource = self;
     tableViewThird.scrollEnabled = NO;
@@ -104,8 +127,8 @@
     [scrollview addSubview:tableViewThird];
     
 
-    
-    
+    scrollview.layer.backgroundColor = [UIColor blackColor].CGColor;
+    scrollview.layer.cornerRadius = 20.0;
     [self.view addSubview:scrollview];
     scrollview.maximumZoomScale=2.0;
     scrollview.minimumZoomScale=0.5;
@@ -124,6 +147,39 @@
     viewTop.hidden = YES;
     [self.view addSubview:viewTop];
 
+    
+    
+    
+//    UIView *viewSample = [[UIView alloc] init];
+//    [self.view addSubview:viewSample];
+//    viewSample.backgroundColor = [UIColor greenColor];
+//    viewSample.frame = CGRectMake(10, 10, 200, 200);
+//    //Test 1 阴影
+//    
+//    //
+//    viewSample.layer.shadowPath = [UIBezierPath bezierPathWithRect:viewSample.bounds].CGPath;
+//    viewSample.layer.shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(10, 10, 250, 250)].CGPath;
+//    viewSample.layer.masksToBounds = NO;
+//    viewSample.layer.shadowOffset = CGSizeMake(10, 10);
+//    viewSample.layer.shadowRadius = 5;
+//    viewSample.layer.shadowOpacity = 0.5;
+//    //Test 2 边框
+//    viewSample.layer.borderWidth = 2;
+//    viewSample.layer.borderColor = [[UIColor redColor] CGColor];
+//    //Test 3 masksToBounds
+//    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10,10, 300, 300)];
+//    btn.backgroundColor = [UIColor lightGrayColor];
+//    //
+//    [viewSample addSubview:btn];
+//    //
+//    viewSample.layer.masksToBounds = true;
+//    //Test 4 bounds
+//    //
+//    viewSample.layer.bounds = CGRectMake(200, 200, 400, 400);
+//    //Test 5
+//    viewSample.layer.opacity = 0.5;
+//    viewSample.layer.cornerRadius = 5;
+    
 }
 
 
