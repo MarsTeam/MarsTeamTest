@@ -274,4 +274,20 @@
     
 }
 
+
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+
+    NSLog(@"didScroll");
+}
+
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+
+    NSLog(@"DidEndDragging");
+
+}
+
 @end

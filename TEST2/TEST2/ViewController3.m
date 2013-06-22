@@ -52,6 +52,8 @@
 {
     [super viewDidLoad];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(Onback)];
+    
     
     self.view.layer.cornerRadius = 20.0;
     self.view.layer.backgroundColor = [UIColor purpleColor].CGColor;
@@ -147,38 +149,7 @@
     viewTop.hidden = YES;
     [self.view addSubview:viewTop];
 
-    
-    
-    
-//    UIView *viewSample = [[UIView alloc] init];
-//    [self.view addSubview:viewSample];
-//    viewSample.backgroundColor = [UIColor greenColor];
-//    viewSample.frame = CGRectMake(10, 10, 200, 200);
-//    //Test 1 阴影
-//    
-//    //
-//    viewSample.layer.shadowPath = [UIBezierPath bezierPathWithRect:viewSample.bounds].CGPath;
-//    viewSample.layer.shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(10, 10, 250, 250)].CGPath;
-//    viewSample.layer.masksToBounds = NO;
-//    viewSample.layer.shadowOffset = CGSizeMake(10, 10);
-//    viewSample.layer.shadowRadius = 5;
-//    viewSample.layer.shadowOpacity = 0.5;
-//    //Test 2 边框
-//    viewSample.layer.borderWidth = 2;
-//    viewSample.layer.borderColor = [[UIColor redColor] CGColor];
-//    //Test 3 masksToBounds
-//    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10,10, 300, 300)];
-//    btn.backgroundColor = [UIColor lightGrayColor];
-//    //
-//    [viewSample addSubview:btn];
-//    //
-//    viewSample.layer.masksToBounds = true;
-//    //Test 4 bounds
-//    //
-//    viewSample.layer.bounds = CGRectMake(200, 200, 400, 400);
-//    //Test 5
-//    viewSample.layer.opacity = 0.5;
-//    viewSample.layer.cornerRadius = 5;
+
     
 }
 
@@ -315,7 +286,10 @@
     
 }
 
-
+-(void)Onback
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 - (void)didReceiveMemoryWarning

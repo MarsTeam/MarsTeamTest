@@ -46,6 +46,7 @@
         listTable.dataSource = self;
         listTable.delegate = self;
         listTable.backgroundView = nil;
+        listTable.scrollEnabled = NO;
         [listTable setBackgroundColor:[UIColor whiteColor]];
         //[listTable setSeparatorColor:[UIColor clearColor]];
         [listTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];

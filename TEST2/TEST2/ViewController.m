@@ -11,6 +11,7 @@
 #import "ASIFormDataRequest.h"
 #import "ViewController2.h"
 #import "ViewController3.h"
+#import "ViewController4.h"
 
 @interface ViewController ()
 {
@@ -58,11 +59,26 @@
     [super viewDidLoad];
     
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(100, 250, 100, 50);
-    [button setTitle:@"NEXT VIEW" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(goView) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button1.frame = CGRectMake(10, 250, 60, 50);
+    button1.tag = 1;
+    [button1 setTitle:@"VIEW2" forState:UIControlStateNormal];
+    [button1 addTarget:self action:@selector(goView2) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button1];
+    
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button2.frame = CGRectMake(90, 250, 60, 50);
+    button2.tag = 2;
+    [button2 setTitle:@"VIEW3" forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(goView3) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button2];
+    
+    UIButton *button3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button3.frame = CGRectMake(170, 250, 60, 50);
+    button3.tag = 3;
+    [button3 setTitle:@"VIEW4" forState:UIControlStateNormal];
+    [button3 addTarget:self action:@selector(goView4) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button3];
     
     
     NSLog(@"羊你改成你的名字");
@@ -358,14 +374,28 @@
     return 128;
     //return 60;
 }
-- (void)goView
-{
 
+- (void)goView2
+{
+    ViewController2* viewController = [[ViewController2 alloc] init];
+    UINavigationController *navigatitonController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    //	[self presentModalViewController:navigatitonController animated:YES];
+    [self presentViewController:navigatitonController animated:YES completion:^{}];
+}
+
+- (void)goView3
+{
     ViewController3* viewController = [[ViewController3 alloc] init];
-    
-    
     UINavigationController *navigatitonController = [[UINavigationController alloc]initWithRootViewController:viewController];
 //	[self presentModalViewController:navigatitonController animated:YES];
+    [self presentViewController:navigatitonController animated:YES completion:^{}];
+}
+
+- (void)goView4
+{
+    ViewController4* viewController = [[ViewController4 alloc] init];
+    UINavigationController *navigatitonController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    //	[self presentModalViewController:navigatitonController animated:YES];
     [self presentViewController:navigatitonController animated:YES completion:^{}];
 }
 
