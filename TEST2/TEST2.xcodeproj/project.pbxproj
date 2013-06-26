@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		890E3BE11764B063009E76E6 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 890E3BDF1764B063009E76E6 /* ViewController3.m */; };
 		890E3BE21764B063009E76E6 /* ViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890E3BE01764B063009E76E6 /* ViewController3.xib */; };
+		892E10EA177B39A00009CA93 /* plisttext.plist in Resources */ = {isa = PBXBuildFile; fileRef = 892E10E9177B39A00009CA93 /* plisttext.plist */; };
+		892E10EB177B39A00009CA93 /* plisttext.plist in Resources */ = {isa = PBXBuildFile; fileRef = 892E10E9177B39A00009CA93 /* plisttext.plist */; };
 		8932CE771768551100FA1D2F /* tab1_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 8932CE6B1768551100FA1D2F /* tab1_off.png */; };
 		8932CE781768551100FA1D2F /* tab1_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 8932CE6B1768551100FA1D2F /* tab1_off.png */; };
 		8932CE791768551100FA1D2F /* tab1_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8932CE6C1768551100FA1D2F /* tab1_off@2x.png */; };
@@ -128,6 +130,7 @@
 		890E3BDE1764B063009E76E6 /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
 		890E3BDF1764B063009E76E6 /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		890E3BE01764B063009E76E6 /* ViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController3.xib; sourceTree = "<group>"; };
+		892E10E9177B39A00009CA93 /* plisttext.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = plisttext.plist; path = ../plisttext.plist; sourceTree = "<group>"; };
 		8932CE6B1768551100FA1D2F /* tab1_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab1_off.png; sourceTree = "<group>"; };
 		8932CE6C1768551100FA1D2F /* tab1_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab1_off@2x.png"; sourceTree = "<group>"; };
 		8932CE6D1768551100FA1D2F /* tab1_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab1_on.png; sourceTree = "<group>"; };
@@ -342,6 +345,7 @@
 		97216A62172D08830002F022 /* TEST2 */ = {
 			isa = PBXGroup;
 			children = (
+				892E10E9177B39A00009CA93 /* plisttext.plist */,
 				97216A6B172D08830002F022 /* AppDelegate.h */,
 				97216A6C172D08830002F022 /* AppDelegate.m */,
 				97216A74172D08830002F022 /* MainStoryboard_iPhone.storyboard */,
@@ -638,6 +642,7 @@
 				8932CE8B1768551100FA1D2F /* tab3_on.png in Resources */,
 				8932CE8D1768551100FA1D2F /* tab3_on@2x.png in Resources */,
 				8949EB8B176B0E5600E98098 /* ViewController4.xib in Resources */,
+				892E10EA177B39A00009CA93 /* plisttext.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +669,7 @@
 				8932CE8A1768551100FA1D2F /* tab3_off@2x.png in Resources */,
 				8932CE8C1768551100FA1D2F /* tab3_on.png in Resources */,
 				8932CE8E1768551100FA1D2F /* tab3_on@2x.png in Resources */,
+				892E10EB177B39A00009CA93 /* plisttext.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

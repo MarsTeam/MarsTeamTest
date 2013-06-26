@@ -58,6 +58,82 @@
 {
     [super viewDidLoad];
     
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"plisttext" ofType:@"plist"];
+    
+    NSLog(@"path:%@",plistPath);
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    NSLog(@"dataMars:%@",data);
+    
+    [data setObject:@"wocharu dd" forKey:@"Dudu"];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString *plistPath1 = [paths objectAtIndex:0];
+    
+    NSString *filename = [plistPath1 stringByAppendingPathComponent:@"plisttext.plist"];
+    
+    [data writeToFile:filename atomically:YES];
+    
+    NSMutableDictionary *data1 = [[NSMutableDictionary alloc] initWithContentsOfFile:filename];
+    NSLog(@"data1:%@", data1);
+    
+    
+    
+    
+    
+    
+    //GCD 多线程
+    
+    UInt32 loopCount = 1000;
+    UInt32 loopCountFirst = 10000000;
+    
+    void (^taskFirst)(void) = ^{
+        NSLog(@"taskFirst 任务开始执行\r\n");
+        
+        //延长taskFirst的运行时间
+        for (UInt32 i = 0; i < loopCountFirst; i++) {
+            
+        }
+        NSLog(@"taskFirst 任务结束\r\n");
+    };
+    
+    void (^taskSecond)(void) = ^{
+        NSLog(@"taskSecond任务开始执行\r\n");
+        for (UInt32 i = 0; i < loopCount; i ++) {
+            
+        }
+        NSLog(@"taskSecond 任务结束\r\n");
+    };
+    dispatch_queue_t serialQueue;
+    serialQueue = dispatch_queue_create("serialDemo", NULL);
+    //创建第二个队列
+    dispatch_queue_t serialQueueSecond = dispatch_queue_create("serialSecondDemo", NULL);
+    dispatch_async(serialQueue, taskFirst);
+    NSLog(@"taskfirst 已经加入队列\r\n");
+    dispatch_async(serialQueueSecond, taskSecond);
+    NSLog(@"tasksecond 已经加入队列\r\n");
+    
+  
+    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_group_t qroup = dispatch_group_create();
+
+    
+    dispatch_async(concurrentQueue, taskFirst);
+    NSLog(@"taskfirst 已经加入队列\r\n");
+    dispatch_async(concurrentQueue, taskSecond);
+    NSLog(@"tasksecond 已经加入队列\r\n");
+    
+    dispatch_group_async(qroup, concurrentQueue,taskFirst);
+    dispatch_group_async(qroup, concurrentQueue, taskSecond);
+    //等待上面两个执行后才执行
+    dispatch_group_notify(qroup, concurrentQueue, taskSecond);
+    
+    
+    
+    
+    
+    
     
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button1.frame = CGRectMake(10, 250, 60, 50);
@@ -81,7 +157,8 @@
     [self.view addSubview:button3];
     
     
-    NSLog(@"羊你改成你的名字");
+    
+    
     NSString *contents = @"您有一条TEST2未读的新消息";
     [self localNotification:contents];
     
@@ -89,14 +166,14 @@
     [self imageUpload:image];
 
     
-    int (^maxBlock)(int, int) = ^(int x, int y)
-    {
-        return x+y;
-    };
-    
-    int aa = maxBlock(10,50);
-    
-    NSLog(@"%d",aa);
+//    int (^maxBlock)(int, int) = ^(int x, int y)
+//    {
+//        return x+y;
+//    };
+//    
+//    int aa = maxBlock(10,50);
+//    
+//    NSLog(@"%d",aa);
     
     j = 0;
     CGRect pickerFrame = CGRectMake(0, 0, 120, 80);
