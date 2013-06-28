@@ -12,6 +12,7 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 #import "ViewController4.h"
+#import "ViewController5.h"
 
 @interface ViewController ()
 {
@@ -157,7 +158,12 @@
     [self.view addSubview:button3];
     
     
-    
+    UIButton *button4 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button4.frame = CGRectMake(170, 320, 60, 50);
+    button4.tag = 3;
+    [button4 setTitle:@"VIEW5" forState:UIControlStateNormal];
+    [button4 addTarget:self action:@selector(goView5) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button4];
     
     NSString *contents = @"您有一条TEST2未读的新消息";
     [self localNotification:contents];
@@ -475,6 +481,18 @@
     //	[self presentModalViewController:navigatitonController animated:YES];
     [self presentViewController:navigatitonController animated:YES completion:^{}];
 }
+
+
+
+- (void)goView5
+{
+    ViewController5* viewController = [[ViewController5 alloc] init];
+    UINavigationController *navigatitonController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    //	[self presentModalViewController:navigatitonController animated:YES];
+    [self presentViewController:navigatitonController animated:YES completion:^{}];
+}
+
+
 
 
 - (void)didReceiveMemoryWarning
