@@ -13,6 +13,7 @@
 #import "ViewController3.h"
 #import "ViewController4.h"
 #import "ViewController5.h"
+#import "ViewController6.h"
 
 @interface ViewController ()
 {
@@ -55,9 +56,24 @@
 //    [super viewDidLoad];
 //}
 
+
+
+
+//定义通知中使用的方法：
+- (void)callBack{
+    NSLog(@"i am back.");
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callBack)name: @"back" object:nil];
+
+    
+    
+    //__________________________________________________________________________________________________
     
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"plisttext" ofType:@"plist"];
     
@@ -137,21 +153,21 @@
     
     
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button1.frame = CGRectMake(10, 250, 60, 50);
+    button1.frame = CGRectMake(10, 220, 60, 50);
     button1.tag = 1;
     [button1 setTitle:@"VIEW2" forState:UIControlStateNormal];
     [button1 addTarget:self action:@selector(goView2) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button2.frame = CGRectMake(90, 250, 60, 50);
+    button2.frame = CGRectMake(90, 220, 60, 50);
     button2.tag = 2;
     [button2 setTitle:@"VIEW3" forState:UIControlStateNormal];
     [button2 addTarget:self action:@selector(goView3) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
     
     UIButton *button3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button3.frame = CGRectMake(170, 250, 60, 50);
+    button3.frame = CGRectMake(170, 220, 60, 50);
     button3.tag = 3;
     [button3 setTitle:@"VIEW4" forState:UIControlStateNormal];
     [button3 addTarget:self action:@selector(goView4) forControlEvents:UIControlEventTouchUpInside];
@@ -159,11 +175,22 @@
     
     
     UIButton *button4 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button4.frame = CGRectMake(170, 320, 60, 50);
+    button4.frame = CGRectMake(250, 220, 60, 50);
     button4.tag = 3;
     [button4 setTitle:@"VIEW5" forState:UIControlStateNormal];
     [button4 addTarget:self action:@selector(goView5) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button4];
+    
+    
+    UIButton *button5 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button5.frame = CGRectMake(10, 280, 60, 50);
+    button5.tag = 3;
+    [button5 setTitle:@"VIEW6" forState:UIControlStateNormal];
+    [button5 addTarget:self action:@selector(goView6) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button5];
+    
+    
+    
     
     NSString *contents = @"您有一条TEST2未读的新消息";
     [self localNotification:contents];
@@ -492,6 +519,14 @@
     [self presentViewController:navigatitonController animated:YES completion:^{}];
 }
 
+
+- (void)goView6
+{
+    ViewController6* viewController = [[ViewController6 alloc] init];
+    UINavigationController *navigatitonController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    //	[self presentModalViewController:navigatitonController animated:YES];
+    [self presentViewController:navigatitonController animated:YES completion:^{}];
+}
 
 
 
